@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    /* 基本选项 */
+    "target": "es5", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'（"ESNext"表示最新的ES语法，包括还处在stage X阶段）。如果不设置，默认生产的代码兼容到es3。
+    "module": "es2015", // 用于指定模块的代码生成规则，可以使用 commonjs、 amd、 umd、 system、 es6、 es2015、 none这些选项。
+    "allowJs": true, // 当设置为true时，js文件也会被编译。
+    "outDir": "./dist/", // 指定输出文件的目录。
+    "jsx": "react",
+
+    /* 严格的类型检查选项 */
+    "noImplicitAny": true, // 在表达式和声明上有隐含的 any类型时报错
+
+    /* 模块解析选项 */
+    "baseUrl": "./", // 用于解析非相对模块名称的基目录
+    "paths": {
+      "@/*": ["src/*"] // 模块名到基于 baseUrl 的路径映射的列表。paths 需与 baseUrl 一起配合使用，用于解决webpack中的别名问题。
+    },
+    // 需要包含的类型声明文件名列表
+    "types": [
+      /*
+       * 默认情况下，TypeScript 会自动包含支持全局使用的任何定义。当yarn add @types/chrome，此时无需任何配置，即可使用 chrome 这个全局变量。
+       * 因为 TypeScript 在默认情况下所有可见的 “@types” 包都包含在编译中。node_modules/@types任何封闭文件夹中的包都被视为可见 ;
+       * 当配置compilerOptions.types: ["chrome"]，表示只允许使用 chrome 的 @types包。如果此时安装了 @types/jquery，则无法识别 $ 这个全局变量。
+       */
+      // "chrome",
+      // "jquery"
+    ],
+    "allowSyntheticDefaultImports": true, // 设置为true时，则允许从没有默认导出的模块中默认导入(也就是不做检查)
+    /* 其他选项 */
+    "experimentalDecorators": true // 设置为true，则支持ES7的装饰器特性
+  },
+  "include": ["./**/*"],
+  "exclude": ["node_modules", "dist", "config"]
+}

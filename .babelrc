@@ -1,0 +1,16 @@
+{
+  "presets": ["@babel/preset-env"],
+  /*
+   * 一个plugin可以理解为对应一个功能
+   */
+  "plugins": [
+    // 动态import(目前还没有原生支持，需要babel转换)
+    "@babel/plugin-syntax-dynamic-import",
+
+    // 解决class中无法识别通过箭头函数定义的属性问题
+    "@babel/plugin-proposal-class-properties",
+
+    // 解决async报错问题，依赖@babel/plugin-transform-runtime
+    "@babel/plugin-transform-runtime"
+  ]
+}
