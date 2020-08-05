@@ -1,5 +1,7 @@
 const path = require('path');
 const { merge } = require('webpack-merge'); // 将配置合并在一起
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const commonCfg = require('./common');
 
 const productionCfg = {
