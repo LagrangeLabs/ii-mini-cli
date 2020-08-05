@@ -57,7 +57,7 @@ module.exports = {
             },
           },
           {
-            // 用于将 less 转换成 css。less-loader 依赖于 less，故需安装下 less
+            // 用于将 less 转换成 css。less-loader 依赖于 less，故还需安装下 less
             loader: 'less-loader',
             options: {
               lessOptions: {

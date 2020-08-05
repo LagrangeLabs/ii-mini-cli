@@ -5,10 +5,10 @@ const commonCfg = require('./common');
 const developmentCfg = {
   mode: 'development',
   /**
-   * webpack-dev-server 输出的文件只存在内存中，不输出真实的文件
+   * webpack-dev-server 会将编译生成的 bundle 文件存在内存中，并不输出真实文件
    */
   devServer: {
-    contentBase: path.resolve(__dirname, '../dist/'), // 告诉 devServer 从哪个目录中提供内容。
+    contentBase: path.resolve(__dirname, '../dist/'), // 告诉 devServer 从哪个目录中寻找文件
     // compress: true, // 一切服务都启用 gzip 压缩
     port: 9001,
     host: 'localhost',
